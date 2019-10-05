@@ -62,10 +62,33 @@ export default class Game {
             this.waterballoonsArr.push(new WaterBalloon(newPos[0], {positionX: newPos[1], speedY: newPos[2]}));
         }
 
-       
-        
         this.inputHandler = new InputHandler(this.theGoat);
 
+    }
+
+    restart(){
+        // UPDATE BASED ON CURRENT LEVEL and based on oilballoonsHit // WAterballoonsMissed
+        this.gameOver = false;
+
+        this.totalWaterballoons = 4;
+        this.waterballoonsArr= [];
+        this.MissedWaterballoons = 0;
+        this.score = 0;
+
+
+        this.OilBalloonsTotal = 2;
+        this.oilballoonsArr = [];
+        this.HitOilBalloons = 0;
+
+        this.totalshots = 1;
+        this.shots = [];
+
+        this.remove = false;
+        this.paused = false;
+
+        this.currentLevel = 1;
+
+        this.start();
     }
 
 
@@ -108,6 +131,53 @@ export default class Game {
         return NEWcreateWb;
     }
 
+    generateRandomBalloonPosLevel2(){
+        let NEWpositionX = Math.floor(Math.random() * 645)
+                while (NEWpositionX < 55) {
+                    NEWpositionX = Math.floor(Math.random() * 645)
+        }
+        // debugger;
+        let NEWspeedY = Math.random() * 1 + 1;
+        let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
+        return NEWcreateWb;
+    }
+
+    generateRandomBalloonPosLevel3(){
+        let NEWpositionX = Math.floor(Math.random() * 645)
+                while (NEWpositionX < 55) {
+                    NEWpositionX = Math.floor(Math.random() * 645)
+        }
+        // debugger;
+        let NEWspeedY = Math.random() * 1 + 1.4;
+        let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
+        return NEWcreateWb;
+    }
+
+    generateRandomBalloonPosLevel4(){
+        let NEWpositionX = Math.floor(Math.random() * 645)
+                while (NEWpositionX < 55) {
+                    NEWpositionX = Math.floor(Math.random() * 645)
+        }
+        // debugger;
+        let NEWspeedY = Math.random() * 1 + 1.9;
+        let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
+        return NEWcreateWb;
+    }
+
+
+    generateRandomBalloonPosLevel5(){
+        let NEWpositionX = Math.floor(Math.random() * 645)
+                while (NEWpositionX < 55) {
+                    NEWpositionX = Math.floor(Math.random() * 645)
+        }
+        // debugger;
+        let NEWspeedY = Math.random() * 1 + 2.2;
+        let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
+        return NEWcreateWb;
+    }
+
+
+
     hitTest() {
         // Water Balloon hit test
         for (let l = 0; l < this.shots.length; l++) {
@@ -122,8 +192,31 @@ export default class Game {
 
                 console.log(this.score);
 
+                // let newWaterPos = this.generateRandomBalloonPosLevel1();
+                // this.WaterballoonsArr.push(new WaterBalloon(newWaterPos[0], 
+                //     {positionX: newWaterPos[1], speedY: newWaterPos[2]}));
+
+                if (this.currentLevel === 1) {
                 let newWaterPos = this.generateRandomBalloonPosLevel1();
-                this.waterballoonsArr.push(new WaterBalloon(newWaterPos[0], {positionX: newWaterPos[1], speedY: newWaterPos[2]}));
+                this.waterballoonsArr.push(new WaterBalloon(newWaterPos[0], 
+                    {positionX: newWaterPos[1], speedY: newWaterPos[2]}));
+                } else if (this.currentLevel === 2) {
+                    let newWaterPos2 = this.generateRandomBalloonPosLevel2();
+                    this.waterballoonsArr.push(new WaterBalloon(newWaterPos2[0], 
+                        {positionX: newWaterPos2[1], speedY: newWaterPos2[2]}));
+                } else if (this.currentLevel === 3) {
+                    let newWaterPos3 = this.generateRandomBalloonPosLevel3();
+                    this.waterballoonsArr.push(new WaterBalloon(newWaterPos3[0], 
+                        {positionX: newWaterPos3[1], speedY: newWaterPos3[2]})); 
+                } else if (this.currentLevel === 4) {
+                    let newWaterPos4 = this.generateRandomBalloonPosLevel4();
+                    this.waterballoonsArr.push(new WaterBalloon(newWaterPos4[0], 
+                        {positionX: newWaterPos4[1], speedY: newWaterPos4[2]})); 
+                } else if (this.currentLevel >= 5) {
+                    let newWaterPos5 = this.generateRandomBalloonPosLevel5();
+                    this.waterballoonsArr.push(new WaterBalloon(newWaterPos5[0], 
+                        {positionX: newWaterPos5[1], speedY: newWaterPos5[2]})); 
+                }
             }
           }
 
@@ -143,9 +236,32 @@ export default class Game {
                 this.oilballoonsArr.splice(n, 1);
                 this.HitOilBalloons += 1;
 
-                let newOilPos = this.generateRandomBalloonPosLevel1();
-                this.oilballoonsArr.push(new OilBalloon(newOilPos[0], {positionX: newOilPos[1], speedY: newOilPos[2]}));
-              }
+                // let newOilPos = this.generateRandomBalloonPosLevel1();
+                // this.oilballoonsArr.push(new OilBalloon(newOilPos[0], 
+                //     {positionX: newOilPos[1], speedY: newOilPos[2]}));
+                
+                if (this.currentLevel === 1) {
+                    let newOilPos = this.generateRandomBalloonPosLevel1();
+                    this.oilballoonsArr.push(new OilBalloon(newOilPos[0], 
+                        {positionX: newOilPos[1], speedY: newOilPos[2]}));
+                    } else if (this.currentLevel === 2) {
+                        let newOilPos2 = this.generateRandomBalloonPosLevel2();
+                        this.oilballoonsArr.push(new OilBalloon(newOilPos2[0], 
+                            {positionX: newOilPos2[1], speedY: newOilPos2[2]}));
+                    } else if (this.currentLevel === 3) {
+                        let newOilPos3 = this.generateRandomBalloonPosLevel3();
+                        this.oilballoonsArr.push(new OilBalloon(newOilPos3[0], 
+                            {positionX: newOilPos3[1], speedY: newOilPos3[2]})); 
+                    } else if (this.currentLevel === 4) {
+                        let newOilPos4 = this.generateRandomBalloonPosLevel4();
+                        this.oilballoonsArr.push(new OilBalloon(newOilPos4[0], 
+                            {positionX: newOilPos4[1], speedY: newOilPos4[2]})); 
+                    } else if (this.currentLevel >= 5) {
+                        let newOilPos5 = this.generateRandomBalloonPosLevel5();
+                        this.oilballoonsArr.push(new OilBalloon(newOilPos5[0], 
+                            {positionX: newOilPos5[1], speedY: newOilPos5[2]})); 
+                    }
+                }
             }
   
             if (this.removee === true){
@@ -169,9 +285,31 @@ export default class Game {
 
                 console.log(this.MissedWaterballoons);
 
-                let newWatPos = this.generateRandomBalloonPosLevel1();
-                this.waterballoonsArr.push(new WaterBalloon(newWatPos[0], {positionX: newWatPos[1], speedY: newWatPos[2]}));
-
+                // let newWatPos = this.generateRandomBalloonPosLevel1();
+                // this.waterballoonsArr.push(new WaterBalloon(newWatPos[0], {positionX: newWatPos[1], speedY: newWatPos[2]}));
+        
+            
+                if (this.currentLevel === 1) {
+                    let newWaterPos = this.generateRandomBalloonPosLevel1();
+                    this.waterballoonsArr.push(new WaterBalloon(newWaterPos[0], 
+                        {positionX: newWaterPos[1], speedY: newWaterPos[2]}));
+                    } else if (this.currentLevel === 2) {
+                        let newWaterPos2 = this.generateRandomBalloonPosLevel2();
+                        this.waterballoonsArr.push(new WaterBalloon(newWaterPos2[0], 
+                            {positionX: newWaterPos2[1], speedY: newWaterPos2[2]}));
+                    } else if (this.currentLevel === 3) {
+                        let newWaterPos3 = this.generateRandomBalloonPosLevel3();
+                        this.waterballoonsArr.push(new WaterBalloon(newWaterPos3[0], 
+                            {positionX: newWaterPos3[1], speedY: newWaterPos3[2]})); 
+                    } else if (this.currentLevel === 4) {
+                        let newWaterPos4 = this.generateRandomBalloonPosLevel4();
+                        this.waterballoonsArr.push(new WaterBalloon(newWaterPos4[0], 
+                            {positionX: newWaterPos4[1], speedY: newWaterPos4[2]})); 
+                    } else if (this.currentLevel >= 5) {
+                        let newWaterPos5 = this.generateRandomBalloonPosLevel5();
+                        this.waterballoonsArr.push(new WaterBalloon(newWaterPos5[0], 
+                            {positionX: newWaterPos5[1], speedY: newWaterPos5[2]})); 
+                    }
                 
             }
         }  
@@ -187,10 +325,30 @@ export default class Game {
                 
                 console.log(this.Missedoilballoons);
 
-                let newOilPos = this.generateRandomBalloonPosLevel1();
-                this.oilballoonsArr.push(new OilBalloon(newOilPos[0], {positionX: newOilPos[1], speedY: newOilPos[2]}));
-
+                // let newOilPos = this.generateRandomBalloonPosLevel1();
+                // this.oilballoonsArr.push(new OilBalloon(newOilPos[0], {positionX: newOilPos[1], speedY: newOilPos[2]}));
                 
+                if (this.currentLevel === 1) {
+                    let newOilPos = this.generateRandomBalloonPosLevel1();
+                    this.oilballoonsArr.push(new OilBalloon(newOilPos[0], 
+                        {positionX: newOilPos[1], speedY: newOilPos[2]}));
+                    } else if (this.currentLevel === 2) {
+                        let newOilPos2 = this.generateRandomBalloonPosLevel2();
+                        this.oilballoonsArr.push(new OilBalloon(newOilPos2[0], 
+                            {positionX: newOilPos2[1], speedY: newOilPos2[2]}));
+                    } else if (this.currentLevel === 3) {
+                        let newOilPos3 = this.generateRandomBalloonPosLevel3();
+                        this.oilballoonsArr.push(new OilBalloon(newOilPos3[0], 
+                            {positionX: newOilPos3[1], speedY: newOilPos3[2]})); 
+                    } else if (this.currentLevel === 4) {
+                        let newOilPos4 = this.generateRandomBalloonPosLevel4();
+                        this.oilballoonsArr.push(new OilBalloon(newOilPos4[0], 
+                            {positionX: newOilPos4[1], speedY: newOilPos4[2]})); 
+                    } else if (this.currentLevel >= 5) {
+                        let newOilPos5 = this.generateRandomBalloonPosLevel5();
+                        this.oilballoonsArr.push(new OilBalloon(newOilPos5[0], 
+                            {positionX: newOilPos5[1], speedY: newOilPos5[2]})); 
+                    }
             }
         }  
     }
@@ -253,8 +411,6 @@ export default class Game {
         ctx.fillText("Score: "+ this.score, 8, 20);
 
         ctx.fillText("Level: "+ this.currentLevel, 8, 40);
-
-        
     }
 }
 

@@ -23,6 +23,11 @@
         <button class="success next-level"> Go to Next level</button>
     </div>
 
+    <div class="lose-message remove-message">
+        <p> You Lose. Better Luck Next Time</p>
+        <button class="success restart-game"> Restart </button>
+    </div>
+
     <button id="play-button" class="success"> Play </button>
 
     <button id="pause-button" class="blue"> Pause </button>
@@ -51,13 +56,29 @@
 
 .level-message{
     font-family: 'Orbitron', sans-serif;
-    z-index: 2;
+    z-index: 3;
     margin-left: 500px;
     margin-top: 400px;
     position: absolute;
     width: 300px;
     border: 2px solid rgb(187, 182, 182);
     background-color: rgb(37, 119, 51);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 90px;
+}
+
+
+.lose-message{
+    font-family: 'Orbitron', sans-serif;
+    z-index: 3;
+    margin-left: 500px;
+    margin-top: 500px;
+    position: absolute;
+    width: 300px;
+    border: 2px solid rgb(187, 182, 182);
+    background-color: rgb(187, 74, 30);
     display: flex;
     flex-direction: column;
     color: white;
