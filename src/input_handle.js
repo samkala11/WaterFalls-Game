@@ -14,11 +14,22 @@ export default class InputHandler {
                 case 37:  // Left
                     robin.moveLeft();
                     break;
-                case 16:
+                case 88: // X button
                     this.keylogger.fire = true;
-                    console.log("space clicked")
+                    console.log("X clicked")
                     break;
-            }
+                case 13: // ENTER
+                    document.getElementById("play-button").click();
+                    document.getElementsByClassName("next-level")[0].click()
+                    document.getElementsByClassName("level-message")[0].classList.add("remove-message");
+                    break;
+                case 82: // r button
+                    document.getElementsByClassName("restart-game")[0].click()
+                    break; 
+                case 32: // SPACE
+                    document.getElementById("pause-button").click();
+                    break;
+                }   
 
             
 
@@ -33,9 +44,9 @@ export default class InputHandler {
                 case 37:  // Left
                     if (robin.speed < 0)  robin.stop();
                     break;
-                    case 16:
-                        this.keylogger.fire = false;
-                        break;
+                case 88: // X button
+                    this.keylogger.fire = false;
+                    break; 
                 }
 
 

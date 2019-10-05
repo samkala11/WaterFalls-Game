@@ -10,7 +10,7 @@ export default class Goat{
         this.width = 100;
         this.height = 95;
 
-        this.maxSpeed = 5;
+        this.maxSpeed = 4;
         this.speed = 0;
 
         this.position = {

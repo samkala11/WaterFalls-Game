@@ -30,13 +30,13 @@ export default class Game {
         this.waterballoonsArr= [];
         this.MissedWaterballoons = 0;
         this.score = 0;
+        this.totalScore = 0;
 
-
-        this.OilBalloonsTotal = 2;
+        this.OilBalloonsTotal = 1;
         this.oilballoonsArr = [];
         this.HitOilBalloons = 0;
 
-        this.totalshots = 1;
+        this.totalshots = 2;
         this.shots = [];
 
         this.remove = false;
@@ -68,28 +68,30 @@ export default class Game {
 
     restart(){
         // UPDATE BASED ON CURRENT LEVEL and based on oilballoonsHit // WAterballoonsMissed
-        this.gameOver = false;
-
+        
         this.totalWaterballoons = 4;
         this.waterballoonsArr= [];
         this.MissedWaterballoons = 0;
         this.score = 0;
+        this.totalScore = 0;
+        
 
-
-        this.OilBalloonsTotal = 2;
+        this.OilBalloonsTotal = 1;
         this.oilballoonsArr = [];
         this.HitOilBalloons = 0;
 
-        this.totalshots = 1;
+        this.totalshots = 2;
         this.shots = [];
 
         this.remove = false;
         this.paused = false;
 
         this.currentLevel = 1;
+        this.inputHandler = new InputHandler(this.theGoat);
 
         this.start();
     }
+        
 
 
     update(dt) {
@@ -99,7 +101,7 @@ export default class Game {
         this.updateOilBalloons(dt);
 
         if (this.inputHandler.keylogger.fire && this.shots.length < this.totalshots) {
-            this.shots.push([this.theGoat.position.x +50, this.theGoat.position.y - this.theGoat.height, 3, 100]);
+            this.shots.push([this.theGoat.position.x +50, this.theGoat.position.y - this.theGoat.height/2, 3, 100]);
         }
 
         this.moveShot();
@@ -126,7 +128,7 @@ export default class Game {
                     NEWpositionX = Math.floor(Math.random() * 645)
         }
         // debugger;
-        let NEWspeedY = Math.random() * 2;
+        let NEWspeedY = Math.random() * 1.2 + 0.5;
         let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
         return NEWcreateWb;
     }
@@ -137,7 +139,7 @@ export default class Game {
                     NEWpositionX = Math.floor(Math.random() * 645)
         }
         // debugger;
-        let NEWspeedY = Math.random() * 1 + 1;
+        let NEWspeedY = Math.random() * 1 + 0.8;
         let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
         return NEWcreateWb;
     }
@@ -148,7 +150,7 @@ export default class Game {
                     NEWpositionX = Math.floor(Math.random() * 645)
         }
         // debugger;
-        let NEWspeedY = Math.random() * 1 + 1.4;
+        let NEWspeedY = Math.random() * 1 + 1;
         let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
         return NEWcreateWb;
     }
@@ -159,7 +161,7 @@ export default class Game {
                     NEWpositionX = Math.floor(Math.random() * 645)
         }
         // debugger;
-        let NEWspeedY = Math.random() * 1 + 1.9;
+        let NEWspeedY = Math.random() * 1 + 1.3;
         let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
         return NEWcreateWb;
     }
@@ -171,7 +173,7 @@ export default class Game {
                     NEWpositionX = Math.floor(Math.random() * 645)
         }
         // debugger;
-        let NEWspeedY = Math.random() * 1 + 2.2;
+        let NEWspeedY = Math.random() * 1 + 1.75;
         let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
         return NEWcreateWb;
     }
@@ -189,7 +191,7 @@ export default class Game {
 
                 this.waterballoonsArr.splice(j, 1);
                 this.score += 1;
-
+                this.totalScore += 1;
                 console.log(this.score);
 
                 // let newWaterPos = this.generateRandomBalloonPosLevel1();
@@ -364,9 +366,9 @@ export default class Game {
 
     moveShot() {
         for (var i = 0; i < this.shots.length; i++) {
-          if (this.shots[i][1] > -15) {
-            this.shots[i][1] -= 14;
-          } else if (this.shots[i][1] < -14) {
+          if (this.shots[i][1] > -21) {
+            this.shots[i][1] -= 20;
+          } else if (this.shots[i][1] < -20) {
             this.shots.splice(i, 1);
           }
         }
@@ -401,14 +403,14 @@ export default class Game {
 
     drawScore(ctx) {
         ctx.font = "20px Orbitron";
-        ctx.fillStyle = "#0095DD";
+        ctx.fillStyle = "brown";
         ctx.fillText("Water Balloons Missed: "+ this.MissedWaterballoons, 610, 40);
 
         ctx.fillStyle = "brown";
         ctx.fillText("Oil Balloons Hit: " + this.HitOilBalloons, 695, 20);
 
         ctx.fillStyle = "green";
-        ctx.fillText("Score: "+ this.score, 8, 20);
+        ctx.fillText("Score: "+ this.totalScore, 8, 20);
 
         ctx.fillText("Level: "+ this.currentLevel, 8, 40);
     }

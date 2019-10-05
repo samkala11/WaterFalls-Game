@@ -18,6 +18,10 @@
     <img id="garden-background" src="../assets/images/back77.jpg" alt="">
     <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
 
+    <div class="game-instructions">
+
+    </div>
+
     <div class="level-message remove-message">
         <p> You Win this level</p>
         <button class="success next-level"> Go to Next level</button>
@@ -28,7 +32,7 @@
         <button class="success restart-game"> Restart </button>
     </div>
 
-    <button id="play-button" class="success"> Play </button>
+    <button id="play-button" class="success"> Start Game </button>
 
     <button id="pause-button" class="blue"> Pause </button>
     
@@ -48,16 +52,19 @@
 #game-canvas{
     background-color: rgb(208, 208, 208);
     /* border: 1px solid black; */
-    margin-left: 200px;
+    margin-left: 320px;
     margin-top: 50px;
     /* background-image: url(../assets/images/grass-hi.png); */
 }
 
+.game-instructions{
+    display: none;
+}
 
 .level-message{
     font-family: 'Orbitron', sans-serif;
     z-index: 3;
-    margin-left: 500px;
+    margin-left: 630px;
     margin-top: 400px;
     position: absolute;
     width: 300px;
@@ -73,7 +80,7 @@
 .lose-message{
     font-family: 'Orbitron', sans-serif;
     z-index: 3;
-    margin-left: 500px;
+    margin-left: 630px;
     margin-top: 500px;
     position: absolute;
     width: 300px;
@@ -85,7 +92,7 @@
     height: 90px;
 }
 
-.level-message button, .level-message p{
+.level-message button, .level-message p, .lose-message p, .lose-message button{
     align-self: center;
 }
 
@@ -130,19 +137,21 @@
 
 #play-button{
     z-index: 2;
-    margin-left: 600px;
+    margin-left: 730px;
     margin-top: 400px;
     position: absolute;
-    width: 80px;
+    width: 130px;
+    height: 30px;
     font-family: 'Orbitron', sans-serif;
 }
 
 #pause-button{
     z-index: 2;
-    margin-left: 210px;
+    margin-left: 330px;
     margin-top: 110px;
     position: absolute;
     width: 80px;
+    height: 30px;
     font-family: 'Orbitron', sans-serif;
 }
 

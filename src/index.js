@@ -18,6 +18,8 @@ let game = new Game(GAME_WIDTH, GAME_HEIGHT);
 game.start(ctx);
 
 
+
+
 // game.addWaterBalloons();
 // game.loseDetection();
 
@@ -34,7 +36,7 @@ let levelMessage = document.getElementsByClassName("level-message")[0];
 let currentLevelInc = true;
 
 function displayLevelMessage(game, messageDiv, currentLevelUpdate){
-    if (game.score === 5){
+    if (game.score === 10){
         game.paused = true;
         messageDiv.classList.remove("remove-message")
         currentLevelUpdate = true; 
@@ -57,6 +59,7 @@ function displayLoseMessage(game, loseMessagecont) {
     } 
 }
 
+
 let restartGameButton = document.getElementsByClassName("restart-game")[0];
 
 function RestartGame(restartbutton, game, loseMessagecont ){
@@ -69,6 +72,9 @@ function RestartGame(restartbutton, game, loseMessagecont ){
 }
 
 RestartGame(restartGameButton, game, loseMessage);
+
+
+
 
 
 
@@ -103,9 +109,9 @@ function gameLoop(timestamp) {
     let dt = timestamp - lastTime;
     lastTime = timestamp;
 
-    displayLevelMessage(game, levelMessage, currentLevelInc)
-    goToNextLevel(game, nextLevelButton, levelMessage)
-    displayLoseMessage(game, loseMessage)
+    displayLevelMessage(game, levelMessage, currentLevelInc);
+    goToNextLevel(game, nextLevelButton, levelMessage);
+    displayLoseMessage(game, loseMessage);
     
     ctx.clearRect(0,0, GAME_WIDTH, GAME_HEIGHT);
     game.draw(ctx, 120);
@@ -115,6 +121,8 @@ function gameLoop(timestamp) {
         game.update(dt);
     }
    
+    
+
     requestAnimationFrame(gameLoop); // A Browser function
 }
 
