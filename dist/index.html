@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img id="grass-image" src="../assets/images/grass22.webp" alt="">
+    <!-- <img id="grass-image" src="../assets/images/grass-hi.png" alt=""> -->
+    <img id="the-goat"src="../assets/images/orange-goat.png" alt="">
+    <!-- <img id ="black-goat" src="../assets/images/black-goat.png" alt=""> -->
+   
+    <img id="water-balloon" src="../assets/images/Real-Waterballoon.png" alt="">
+    <img id="oil-balloon" src="../assets/images/brown-balloon.png" alt="">
+    
+    <img id="garden-background" src="../assets/images/back77.jpg" alt="">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
+
+    <div class="level-message remove-message">
+        <p> You Win this level</p>
+        <button class="success next-level"> Go to Next level</button>
+    </div>
+
+    <button id="play-button" class="success"> Play </button>
+
+    <button id="pause-button" class="blue"> Pause </button>
+    
+    <canvas id="game-canvas" width=900 height=700>  </canvas>
+    <script src="main.js"></script>
+
+    
+
+
+</body>
+</html>
+
+
+
+<style>
+
+#game-canvas{
+    background-color: rgb(208, 208, 208);
+    /* border: 1px solid black; */
+    margin-left: 200px;
+    margin-top: 50px;
+    /* background-image: url(../assets/images/grass-hi.png); */
+}
+
+
+.level-message{
+    font-family: 'Orbitron', sans-serif;
+    z-index: 2;
+    margin-left: 500px;
+    margin-top: 400px;
+    position: absolute;
+    width: 300px;
+    border: 2px solid rgb(187, 182, 182);
+    background-color: rgb(37, 119, 51);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 90px;
+}
+
+.level-message button, .level-message p{
+    align-self: center;
+}
+
+
+.remove-message{
+    display: none;
+}
+
+.remove-button{
+    display: none;
+}
+
+.btn {
+  border: 2px solid black;
+  background-color: white;
+  color: black;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.success {
+  border-color: #4CAF50;
+  color: green;
+}
+
+.success:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.blue {
+  border-color: #2196F3;
+  color: dodgerblue;
+}
+
+.blue:hover {
+  background: #2196F3;
+  color: white;
+}
+
+
+#play-button{
+    z-index: 2;
+    margin-left: 600px;
+    margin-top: 400px;
+    position: absolute;
+    width: 80px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#pause-button{
+    z-index: 2;
+    margin-left: 210px;
+    margin-top: 110px;
+    position: absolute;
+    width: 80px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body{
+    background-color: rgb(58, 58, 58);
+}
+
+img{
+    display: none;
+}
+
+</style>

@@ -1,0 +1,34 @@
+export default class OilBalloon{
+
+    constructor(game, options){
+        this.image = document.getElementById("oil-balloon")
+
+        this.gameWidth = game.gameWidth
+        this.gameHeight = game.gameHeight
+
+        this.position ={
+            x: options.positionX,
+            y: 30
+        }
+
+        this.speed ={
+            x: 0,
+            y: options.speedY
+        };
+
+        this.dims = {
+            width: 30,
+            height: 52
+        }
+    }
+
+    draw(ctx){
+        ctx.drawImage(this.image, this.position.x, this.position.y, this.dims.width, this.dims.height)
+    }
+
+    update(dt){
+        this.position.x += this.speed.x;
+        this.position.y += this.speed.y;
+    }
+
+}
