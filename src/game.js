@@ -36,7 +36,7 @@ export default class Game {
         this.oilballoonsArr = [];
         this.HitOilBalloons = 0;
 
-        this.totalshots = 2;
+        this.totalshots = 1;
         this.shots = [];
 
         this.remove = false;
@@ -80,7 +80,7 @@ export default class Game {
         this.oilballoonsArr = [];
         this.HitOilBalloons = 0;
 
-        this.totalshots = 2;
+        this.totalshots = 1;
         this.shots = [];
 
         this.remove = false;
@@ -123,9 +123,9 @@ export default class Game {
     }
 
     generateRandomBalloonPosLevel1(){
-        let NEWpositionX = Math.floor(Math.random() * 645)
-                while (NEWpositionX < 55) {
-                    NEWpositionX = Math.floor(Math.random() * 645)
+        let NEWpositionX = Math.floor(Math.random() * 600)
+                while (NEWpositionX < 100) {
+                    NEWpositionX = Math.floor(Math.random() * 600)
         }
         // debugger;
         let NEWspeedY = Math.random() * 1.2 + 0.5;
@@ -134,9 +134,9 @@ export default class Game {
     }
 
     generateRandomBalloonPosLevel2(){
-        let NEWpositionX = Math.floor(Math.random() * 645)
-                while (NEWpositionX < 55) {
-                    NEWpositionX = Math.floor(Math.random() * 645)
+        let NEWpositionX = Math.floor(Math.random() * 600)
+                while (NEWpositionX < 100) {
+                    NEWpositionX = Math.floor(Math.random() * 600)
         }
         // debugger;
         let NEWspeedY = Math.random() * 1 + 0.8;
@@ -145,9 +145,9 @@ export default class Game {
     }
 
     generateRandomBalloonPosLevel3(){
-        let NEWpositionX = Math.floor(Math.random() * 645)
-                while (NEWpositionX < 55) {
-                    NEWpositionX = Math.floor(Math.random() * 645)
+        let NEWpositionX = Math.floor(Math.random() * 600)
+                while (NEWpositionX < 100) {
+                    NEWpositionX = Math.floor(Math.random() * 600)
         }
         // debugger;
         let NEWspeedY = Math.random() * 1 + 1;
@@ -156,9 +156,9 @@ export default class Game {
     }
 
     generateRandomBalloonPosLevel4(){
-        let NEWpositionX = Math.floor(Math.random() * 645)
-                while (NEWpositionX < 55) {
-                    NEWpositionX = Math.floor(Math.random() * 645)
+        let NEWpositionX = Math.floor(Math.random() * 600)
+                while (NEWpositionX < 100) {
+                    NEWpositionX = Math.floor(Math.random() * 600)
         }
         // debugger;
         let NEWspeedY = Math.random() * 1 + 1.3;
@@ -168,9 +168,9 @@ export default class Game {
 
 
     generateRandomBalloonPosLevel5(){
-        let NEWpositionX = Math.floor(Math.random() * 645)
-                while (NEWpositionX < 55) {
-                    NEWpositionX = Math.floor(Math.random() * 645)
+        let NEWpositionX = Math.floor(Math.random() * 600)
+                while (NEWpositionX < 100) {
+                    NEWpositionX = Math.floor(Math.random() * 600)
         }
         // debugger;
         let NEWspeedY = Math.random() * 1 + 1.75;

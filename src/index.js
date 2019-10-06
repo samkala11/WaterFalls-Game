@@ -53,7 +53,7 @@ function displayLevelMessage(game, messageDiv, currentLevelUpdate){
 let loseMessage = document.getElementsByClassName("lose-message")[0];
 
 function displayLoseMessage(game, loseMessagecont) {
-    if(game.MissedWaterballoons >= 6 || game.HitOilBalloons >= 6){
+    if(game.MissedWaterballoons >= 10 || game.HitOilBalloons >= 6){
         loseMessagecont.classList.remove("remove-message");
         game.paused = true;
     } 
