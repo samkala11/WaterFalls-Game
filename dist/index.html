@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>WaterFalls</title>
 </head>
 <body>
     <img id="grass-image" src="../assets/images/grass22.webp" alt="">
@@ -19,17 +20,25 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
 
     <div class="game-instructions">
-        <p class=inst>Game Instructions:</p>
-        <p> Shoot the water balloons</p>
-        <p>Dodge the oil balloons</p>
+       
 
         <p> <span> Arrows </span> to move Rigth and Left</p>
         <p> <span> X </span>  Shoot</p>
         <p><span> R </span>   Restart</p>
-        <p> <span> Enter </span>  Start game or move to next level</p>
+        <p> <span> Enter </span>  Start game/move to next level</p>
         <p>  <span> Space </span>  Pause/resume</p>
         <br> 
-        <p class="loseinst"> Miss more than 10 Water Balloons or hit more than 6 Oil Balloons and Lose</p>
+
+        <p class=inst>Game Instructions:</p>
+        <p> Shoot the <span class="blue">Blue</span> water balloons</p>
+        <p>Dodge the <span id="brown"> Brown</span> oil balloons</p>
+        <br/>
+        <p id="brown">Lose if:</p>
+        <p class="loseinst"> -you Miss more than <span>10 Water Balloons</p>
+        <p class="loseinst"> </span> -hit more than <span>6 Oil Balloons</span> </p>
+        <div class="github-link">  
+         <a href="https://github.com/samkala11/WaterFalls-Game"> <i class="fa fa-github" style="font-size:48px;color:red"> </i></a> 
+        </div>
     </div>
 
     <div class="level-message remove-message">
@@ -59,12 +68,21 @@
 
 <style>
 
-.loseinst{
-    color: rgb(179, 1, 1);
+.github-link{
+    padding-left: 120px;
+    padding-top: 100px;
 }
 
-.game-instructions span{
+.game-instructions span, .blue{
     color: blue;
+}
+
+#brown{
+    color: brown;
+}
+
+.loseinst span{
+    color: rgb(179, 1, 1);
 }
 
 .inst{

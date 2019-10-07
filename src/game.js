@@ -366,9 +366,9 @@ export default class Game {
 
     moveShot() {
         for (var i = 0; i < this.shots.length; i++) {
-          if (this.shots[i][1] > -21) {
-            this.shots[i][1] -= 20;
-          } else if (this.shots[i][1] < -20) {
+          if (this.shots[i][1] > -10) {
+            this.shots[i][1] -= 22;
+          } else if (this.shots[i][1] < -10) {
             this.shots.splice(i, 1);
           }
         }
