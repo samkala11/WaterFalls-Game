@@ -19,7 +19,17 @@
     <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
 
     <div class="game-instructions">
+        <p class=inst>Game Instructions:</p>
+        <p> Shoot the water balloons</p>
+        <p>Dodge the oil balloons</p>
 
+        <p> <span> Arrows </span> to move Rigth and Left</p>
+        <p> <span> X </span>  Shoot</p>
+        <p><span> R </span>   Restart</p>
+        <p> <span> Enter </span>  Start game or move to next level</p>
+        <p>  <span> Space </span>  Pause/resume</p>
+        <br> 
+        <p class="loseinst"> Miss more than 10 Water Balloons or hit more than 6 Oil Balloons and Lose</p>
     </div>
 
     <div class="level-message remove-message">
@@ -49,6 +59,18 @@
 
 <style>
 
+.loseinst{
+    color: rgb(179, 1, 1);
+}
+
+.game-instructions span{
+    color: blue;
+}
+
+.inst{
+    font-weight: bold;
+    color: rgb(39, 185, 46);
+}
 #game-canvas{
     background-color: rgb(208, 208, 208);
     /* border: 1px solid black; */
@@ -58,7 +80,16 @@
 }
 
 .game-instructions{
-    display: none;
+    z-index: 10;
+    border: black 1px solid;
+    width: 300px;
+    height: 600px;
+    position: fixed;
+    margin-top: 50px;
+    box-shadow: 2px 2px 2px 2px rgb(34, 34, 34);
+    background-color: black;
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(226, 225, 225);
 }
 
 .level-message{

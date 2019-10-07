@@ -139,7 +139,7 @@ export default class Game {
                     NEWpositionX = Math.floor(Math.random() * 600)
         }
         // debugger;
-        let NEWspeedY = Math.random() * 1 + 0.8;
+        let NEWspeedY = Math.random() * 1 + 0.6;
         let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
         return NEWcreateWb;
     }
@@ -150,7 +150,7 @@ export default class Game {
                     NEWpositionX = Math.floor(Math.random() * 600)
         }
         // debugger;
-        let NEWspeedY = Math.random() * 1 + 1;
+        let NEWspeedY = Math.random() * 1 + 0.8;
         let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
         return NEWcreateWb;
     }
@@ -161,7 +161,7 @@ export default class Game {
                     NEWpositionX = Math.floor(Math.random() * 600)
         }
         // debugger;
-        let NEWspeedY = Math.random() * 1 + 1.3;
+        let NEWspeedY = Math.random() * 1 + 1.1;
         let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
         return NEWcreateWb;
     }
@@ -173,7 +173,7 @@ export default class Game {
                     NEWpositionX = Math.floor(Math.random() * 600)
         }
         // debugger;
-        let NEWspeedY = Math.random() * 1 + 1.75;
+        let NEWspeedY = Math.random() * 1 + 1.5;
         let NEWcreateWb = [this, NEWpositionX, NEWspeedY];
         return NEWcreateWb;
     }
