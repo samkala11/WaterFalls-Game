@@ -20,13 +20,13 @@ game.start(ctx);
 
 
 
-// game.addWaterBalloons();
-// game.loseDetection();
-
 let playButton = document.getElementById("play-button");
+let contTitle = document.getElementsByClassName("title")[0];
+
 
 playButton.addEventListener("click", () => {game.paused = false;
-playButton.classList.add("remove-button")})
+playButton.classList.add("remove-button");
+contTitle.classList.add("remove-message");})
 
 let pauseButton = document.getElementById("pause-button");
 

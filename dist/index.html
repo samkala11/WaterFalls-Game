@@ -21,23 +21,24 @@
 
     <div class="game-instructions">
        
+        <div class="sub-inst"> 
 
-        <p> <span> Arrows </span> to move Rigth and Left</p>
-        <p> <span> X </span>  Shoot</p>
-        <p><span> R </span>   Restart</p>
+            <p> <span> Arrows </span> to move Rigth and Left</p>
+            <p> <span> X </span>  Shoot</p>
+            <p><span> R </span>   Restart</p>
         <p> <span> Enter </span>  Start game/move to next level</p>
         <p>  <span> Space </span>  Pause/resume</p>
         <br> 
 
         <p class=inst>Game Instructions:</p>
-        <p> Shoot the <span class="blue">Blue</span> water balloons</p>
-        <p>Dodge the <span id="brown"> Brown</span> oil balloons</p>
+        <p> Only Shoot the <span class="blue">Blue</span> water balloons</p>
         <br/>
-        <p id="brown">Lose if:</p>
-        <p class="loseinst"> -you Miss more than <span>10 Water Balloons</p>
-        <p class="loseinst"> </span> -hit more than <span>6 Oil Balloons</span> </p>
-        <div class="github-link">  
-         <a href="https://github.com/samkala11/WaterFalls-Game"> <i class="fa fa-github" style="font-size:48px;color:red"> </i></a> 
+        <p id="brown">Game Over if:</p>
+        <p class="loseinst"> You Miss more than <span>10 Water Balloons</p>
+            <p class="loseinst"> </span> Hit more than <span>6 Oil Balloons</span> </p>
+            <div class="github-link">  
+                <a href="https://github.com/samkala11/WaterFalls-Game"> <i class="fa fa-github" style="font-size:48px;color:red"> </i></a> 
+            </div>
         </div>
     </div>
 
@@ -45,6 +46,10 @@
         <p> You Win this level</p>
         <button class="success next-level"> Go to Next level</button>
     </div>
+
+    <div class="title">
+            <p> Balloon Hunter </p>
+            </div>
 
     <div class="lose-message remove-message">
         <p> You Lose. Better Luck Next Time</p>
@@ -100,7 +105,7 @@
 .game-instructions{
     z-index: 10;
     border: black 1px solid;
-    width: 300px;
+    width: 300px;evel-message
     height: 600px;
     position: fixed;
     margin-top: 50px;
@@ -126,6 +131,27 @@
 }
 
 
+.title{
+    font-family: 'Orbitron', sans-serif;
+    z-index: 2;
+    margin-left: 600px;
+    margin-top: 300px;
+    padding-bottom: 5px;
+    position: absolute;
+    width: 400px;
+box-shadow: rgb(76, 107, 175) 2px 2px 2px  ;
+  background-color: rgb(27, 85, 160);
+    /* display: flex; */
+    font-size: 25px;
+    border-radius: 10px;
+    color: white;
+    height: 60px;
+}
+
+.title p{
+    padding-left: 25%;
+    /* line-clamp: 50%s;  */
+}
 .lose-message{
     font-family: 'Orbitron', sans-serif;
     z-index: 3;
@@ -192,6 +218,7 @@
     width: 130px;
     height: 30px;
     font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
 }
 
 #pause-button{
@@ -202,6 +229,10 @@
     width: 80px;
     height: 30px;
     font-family: 'Orbitron', sans-serif;
+}
+
+.sub-inst{
+    padding-left: 15px;
 }
 
 body{
